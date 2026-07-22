@@ -1,8 +1,8 @@
 import java.util.Scanner;
 public class Main {
     static Scanner sc = new Scanner(System.in);
-    static int getUserChoice(){
-        int choice = sc.nextInt();
+    static char getUserChoice(){
+        char choice = sc.next().charAt(0);
         return choice;
     }
     static void displayMenu(){
@@ -14,7 +14,30 @@ public class Main {
         System.out.println("5. Exit");
     }
 
+    static void executeChoice(char choice){
+        switch(choice){
+            case '1':
+            System.out.println("Create Account Selected");
 
+                break;
+            case '2':
+                System.out.println("Deposit Selected");
+                break;
+            case '3':
+                System.out.println("Withdraw Selected");
+                break;
+            case '4':
+                System.out.println("Check Balance Selected");
+                break;
+
+            case '5':
+                System.out.println("Exit Selected");
+
+                break;
+            default:
+                System.out.println("Invalid");
+        }
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to Smart Bank");
 
@@ -24,7 +47,9 @@ public class Main {
         //Main bank  = new Main();
 
 
-        int choice = getUserChoice();
-        System.out.println("You selected: " + choice);
+        char choice = getUserChoice();
+       // System.out.println("You selected: " + choice);
+
+        executeChoice(choice);
     }
 }
