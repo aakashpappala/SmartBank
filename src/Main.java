@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class Main {
     static Scanner sc = new Scanner(System.in);
+
     static char getUserChoice(){
         char choice = sc.next().charAt(0);
         return choice;
@@ -17,8 +18,7 @@ public class Main {
     static void executeChoice(char choice){
         switch(choice){
             case '1':
-            System.out.println("Create Account Selected");
-
+                createAccount();
                 break;
             case '2':
                 System.out.println("Deposit Selected");
@@ -38,18 +38,49 @@ public class Main {
                 System.out.println("Invalid");
         }
     }
+
+    static Account createAccount(){
+
+        System.out.print("Enter You First Name : ");
+        String firstName=sc.next();
+
+        System.out.print("Enter You Last Name : ");
+        String lastName=sc.next();
+
+        System.out.println("===Enter DOB=== : ");
+        System.out.print("Enter Date : ");
+        int date=sc.nextInt();
+
+        System.out.print("Enter Month : ");
+        int month=sc.nextInt();
+
+        System.out.print("Enter Year : ");
+        int year=sc.nextInt();
+
+
+
+        Account account = new Account(firstName, lastName, date, month, year);
+        account.displayAccountDetails();
+        return account;
+
+    }
+
     public static void main(String[] args) {
-        System.out.println("Welcome to Smart Bank");
+        while(true) {
+            System.out.println("Welcome to Smart Bank");
 
-        displayMenu();
-        System.out.print("Enter your choice: ");
+            displayMenu();
+            System.out.print("Enter your choice: ");
 
-        //Main bank  = new Main();
+            //Main bank  = new Main();
 
 
-        char choice = getUserChoice();
-       // System.out.println("You selected: " + choice);
+            char choice = getUserChoice();
+            // System.out.println("You selected: " + choice);
 
-        executeChoice(choice);
+            executeChoice(choice);
+
+
+        }
     }
 }
