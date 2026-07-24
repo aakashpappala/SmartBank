@@ -66,6 +66,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        Register register = new Register();
+        register.displayRegisterDetails();  
         while(true) {
             System.out.println("Welcome to Smart Bank");
 
