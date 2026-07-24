@@ -60,14 +60,28 @@ public class Main {
 
 
         Account account = new Account(firstName, lastName, date, month, year);
+        int pin,cpin;
+        do {
+            System.out.println("===set Pin===");
+            System.out.print("Please enter your pin : ");
+            pin = sc.nextInt();
+            System.out.print("conform ypur pin : ");
+            cpin = sc.nextInt();
+
+
+
+       }while(account.setPin(pin,cpin));
+
         account.displayAccountDetails();
         return account;
 
     }
 
     public static void main(String[] args) {
+
         while(true) {
             System.out.println("Welcome to Smart Bank");
+
 
             displayMenu();
             System.out.print("Enter your choice: ");
@@ -79,8 +93,8 @@ public class Main {
             // System.out.println("You selected: " + choice);
 
             executeChoice(choice);
-
-
         }
+
+
     }
 }
